@@ -4,11 +4,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: lightcyan;
+    background-color: #1d272c;
     align-items: center;
     padding: 0px 8px;
-    border-radius: 8px;
-    margin-top: 8px;
+    border-bottom: 1px solid #0f1416;
+    position: relative;
 
     .content_wrapper{
         cursor: pointer;
@@ -19,9 +19,14 @@
     }
 
     .item_name{
-        color: #020202;
+        color: #fff;
         font-weight: 600;
         font-size: 14px;
         padding: 8px;
     }
+}
+
+.container:hover {
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+    z-index: 1;
 }

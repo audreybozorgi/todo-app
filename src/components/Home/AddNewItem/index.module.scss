@@ -1,14 +1,13 @@
-/* TODO: Add variables here */
-.add_new_container{
+.container{
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    >h4{
-        color: #020202;
+    .title{
         margin: 8px 0 8px 0;
-    }
-    >form>div{
+        color: #b8b8b8
+    };
+    .form_elements_wrapper{
         display: flex;
         flex-direction: row;
         width: 100%;
