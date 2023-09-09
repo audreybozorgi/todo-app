@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './index.css'
+import styles from './index.module.scss'
 import Input from 'src/components/Kit/Input'
 import Button from 'src/components/Kit/Button'
 import { useAppDispatch } from 'src/redux/hooks'
@@ -17,6 +17,7 @@ const AddNewItem: React.FC = () => {
             content: inputText
         }
         dispatch(handleAddNewItem(tempItem))
+        setInputText('')
     }
 
     const handleChangeText = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,13 +25,14 @@ const AddNewItem: React.FC = () => {
     }
 
     return (
-        <div className='add_new_container'>
+        <div className={styles.add_new_container}>
             <h4>Add new todo action</h4>
             <form>
                 <div>
                     <Input 
                         style={{ flex: 1 }} 
                         onChange={handleChangeText}
+                        value={inputText}
                     />
                     <Button 
                         style={{ margin: '0 4px' }} 

@@ -9,9 +9,10 @@
         font-weight: 700;
     }
 }
-.items_container{
-    background-color: lightblue;
+.container{
     margin-top: 20px;
-    height: 300px;
+    overflow-y: auto;
     width: 100%;
+    height: 400px;
+    padding-bottom: 100px;
 }   

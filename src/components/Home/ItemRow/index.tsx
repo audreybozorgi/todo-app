@@ -1,6 +1,8 @@
 import React from 'react'
-import './index.css'
-
+import styles from './index.module.scss'
+import Button from 'src/components/Kit/Button';
+import { useAppDispatch } from 'src/redux/hooks';
+import { handleRemoveItem } from 'src/redux/features/home/todoSlice'
 
 interface IItemProps{
     itemData: {
@@ -9,9 +11,25 @@ interface IItemProps{
     }
 }
 const Item: React.FC<IItemProps> = ({ itemData }) => {
+    const dispatch = useAppDispatch()
+
+    const handleDeleteItem = () => {
+        dispatch(handleRemoveItem({id: itemData.id}))
+    }
+
+    const handleSendToTop = () => {
+        
+    }
+
     return (
-        <div className='item_container'>
-            <span className='item_container__name'>{itemData.content}</span>
+        <div className={styles.container}>
+            <div>
+                <span className={styles.item_name}>{itemData.content}</span>
+            </div>
+            <div>
+                <Button onClick={handleDeleteItem}>Delete</Button>
+                <Button onClick={handleSendToTop}>Sort</Button>
+            </div>
         </div>
     )
 }

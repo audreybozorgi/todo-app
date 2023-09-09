@@ -1,15 +1,17 @@
 import React from 'react'
-import './index.css'
+import styles from './index.module.scss'
 
 interface IInputProps {
     style?: Record<string, string | number>;
-    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    value?: string;
 }
-const Input: React.FC<IInputProps> = ({ style, onChange }) => {
+const Input: React.FC<IInputProps> = ({ style, onChange, value }) => {
     return <input 
-        className='input_style'
+        className={styles.input_style}
         style={{...style}}
         onChange={onChange}
+        value={value}
     />
 }
 

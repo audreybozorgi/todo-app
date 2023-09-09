@@ -20,6 +20,9 @@ export const todoSlice = createSlice({
                 return state = [...state, action.payload]
             }
         },
+        handleReorderItems: (state: todoList[], action: PayloadAction<todoList[]>) => {
+            return state = action.payload
+        },
         handleRemoveItem:  (state: todoList[], action: PayloadAction<{ id: string }>) => {
             if(checkItemExist(state, action.payload)) {
                 return state.filter(item => item.id !== action.payload.id)
@@ -31,6 +34,7 @@ export const todoSlice = createSlice({
 
 export const {
     handleAddNewItem,
+    handleReorderItems,
     handleRemoveItem,
     reset,
 } = todoSlice.actions;

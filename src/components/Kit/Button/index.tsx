@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import './index.css'
+import styles from './index.module.scss'
 
 interface IButtonProps {
     style?: Record<string, string>;
@@ -9,7 +9,7 @@ interface IButtonProps {
 const Button: React.FC<IButtonProps> = ({ children, style, onClick }) => {
     return <button 
         onClick={onClick}
-        className='button_style'
+        className={styles.button_style}
         style={{...style}}
     >
         {children}

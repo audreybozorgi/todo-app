@@ -1,15 +1,18 @@
 
-.item_container{
+.container{
     height: 50px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     background-color: lightcyan;
     align-items: center;
     padding: 0px 8px;
     border-radius: 8px;
     margin-top: 8px;
 
-    &__name{
-        color: red;
+    .item_name{
+        color: #020202;
+        font-weight: 600;
+        font-size: 14px;
     }
 }

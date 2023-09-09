@@ -1,9 +1,9 @@
 import React from 'react'
-import './index.css'
+import styles from './index.module.scss'
 
 const JSONView: React.FC = () => {
     return (
-        <div className='json_view_container'>
+        <div className={styles.container}>
             
         </div>
     )

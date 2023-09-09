@@ -4,7 +4,7 @@ import Home from './pages/Home'
 
 const App: React.FC = () => {
   return (
-    <div className={styles.app_container}>
+    <div className={styles.container}>
       <Home />
     </div>
   );
