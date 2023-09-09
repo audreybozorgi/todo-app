@@ -36,7 +36,7 @@ const ItemRow: React.FC<IItemProps> = ({ itemData }) => {
             <div className={styles.content_wrapper}>
                 {editMode 
                     ?   <form>
-                            <Input onChange={e => setInputText(e.target.value)} value={inputText}/>
+                            <Input style={{width: '190px'}} onChange={e => setInputText(e.target.value)} value={inputText}/>
                             <Button 
                                 onClick={handleSaveForm} 
                                 disabled={!inputText || inputText === itemData.content}
@@ -55,7 +55,7 @@ const ItemRow: React.FC<IItemProps> = ({ itemData }) => {
                     :   <span className={styles.item_name}>{itemData.content}</span>
                 }
             </div>
-            <div>
+            <div className={styles.action_wrapper}>
                 <Button 
                     onClick={() => setEditMode(true)}
                     style={{marginRight: '4px'}}
