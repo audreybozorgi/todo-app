@@ -4,6 +4,7 @@ import Button from 'src/components/Kit/Button';
 import { useAppDispatch } from 'src/redux/hooks';
 import { handleRemoveItem, handleUpdateItem } from 'src/redux/features/home/todoSlice'
 import Input from 'src/components/Kit/Input';
+import { BUTTON_CLASS_OPTIONS } from 'src/enums/button';
 
 interface IItemProps{
     itemData: {
@@ -36,15 +37,37 @@ const ItemRow: React.FC<IItemProps> = ({ itemData }) => {
                 {editMode 
                     ?   <form>
                             <Input onChange={e => setInputText(e.target.value)} value={inputText}/>
-                            <Button onClick={handleSaveForm} disabled={!inputText || inputText === itemData.content}>Save</Button>
-                            <Button onClick={handleResetForm}>Cancel</Button>
+                            <Button 
+                                onClick={handleSaveForm} 
+                                disabled={!inputText || inputText === itemData.content}
+                                type={BUTTON_CLASS_OPTIONS.SUCCESS}
+                                style={{margin: '0px 4px'}}
+                            >
+                                Save
+                            </Button>
+                            <Button 
+                                onClick={handleResetForm}
+                                type={BUTTON_CLASS_OPTIONS.DANGER}
+                            >
+                                Cancel
+                            </Button>
                         </form>
                     :   <span className={styles.item_name}>{itemData.content}</span>
                 }
             </div>
             <div>
-                <Button onClick={() => setEditMode(true)}>Edit</Button>
-                <Button onClick={handleDeleteItem}>Delete</Button>
+                <Button 
+                    onClick={() => setEditMode(true)}
+                    style={{marginRight: '4px'}}
+                >
+                    Edit
+                </Button>
+                <Button 
+                    onClick={handleDeleteItem} 
+                    type={BUTTON_CLASS_OPTIONS.DANGER}
+                >
+                    Delete
+                </Button>
             </div>
         </div>
     )
