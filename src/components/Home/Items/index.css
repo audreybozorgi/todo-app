@@ -1,2 +1,17 @@
 
-
+.items_empty_state{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    >span{
+        font-weight: 700;
+    }
+}
+.items_container{
+    background-color: lightblue;
+    margin-top: 20px;
+    height: 300px;
+    width: 100%;
+}   

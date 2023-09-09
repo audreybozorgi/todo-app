@@ -1,0 +1,15 @@
+
+.item_container{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    background-color: lightcyan;
+    align-items: center;
+    padding: 0px 8px;
+    border-radius: 8px;
+    margin-top: 8px;
+
+    &__name{
+        color: red;
+    }
+}
