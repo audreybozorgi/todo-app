@@ -1,0 +1,36 @@
+
+
+.items_empty_state{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    >span{
+        font-weight: 700;
+    }
+}
+
+.container{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+
+    .json_format_wrapper{
+        width: 100%;
+        .main_brace{
+            margin-left: 4px;
+        }
+        .curly_brace{
+            margin-left: 16px;
+        }
+        .body{
+            margin-left: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+}

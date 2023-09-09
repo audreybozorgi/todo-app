@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.module.scss'
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
-import Item from '../ItemRow'
+import ItemRow from '../ItemRow'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useDragAndDrop } from 'src/hooks/useDragAndDrop';
 import { handleReorderItems } from 'src/redux/features/home/todoSlice'
@@ -54,7 +54,7 @@ const Items: React.FC = () => {
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
                                         >
-                                            <Item itemData={{ ...itemObject }} />
+                                            <ItemRow itemData={{ ...itemObject }} />
                                         </div>
                                     )}
                                 </Draggable>

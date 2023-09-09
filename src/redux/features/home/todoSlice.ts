@@ -17,7 +17,7 @@ export const todoSlice = createSlice({
     reducers: {
         handleAddNewItem: (state: todoItem[], action: PayloadAction<todoItem>) => {
             if(!checkItemExist(state, action.payload)){
-                return state = [...state, action.payload]
+                return state = [action.payload, ...state]
             }
         },
         handleReorderItems: (state: todoItem[], action: PayloadAction<todoItem[]>) => {

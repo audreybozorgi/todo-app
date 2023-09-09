@@ -11,7 +11,7 @@ interface IItemProps{
         content: string;
     }
 }
-const Item: React.FC<IItemProps> = ({ itemData }) => {
+const ItemRow: React.FC<IItemProps> = ({ itemData }) => {
     const dispatch = useAppDispatch()
     const [editMode, setEditMode] = useState<boolean>(false)
     const [inputText, setInputText] = useState<string>(itemData.content)
@@ -34,11 +34,11 @@ const Item: React.FC<IItemProps> = ({ itemData }) => {
         <div className={styles.container}>
             <div className={styles.content_wrapper}>
                 {editMode 
-                    ?   <>
-                            <Input style={{width: '70%'}} onChange={e => setInputText(e.target.value)} value={inputText}/>
+                    ?   <form>
+                            <Input onChange={e => setInputText(e.target.value)} value={inputText}/>
                             <Button onClick={handleSaveForm} disabled={!inputText || inputText === itemData.content}>Save</Button>
                             <Button onClick={handleResetForm}>Cancel</Button>
-                        </>
+                        </form>
                     :   <span className={styles.item_name}>{itemData.content}</span>
                 }
             </div>
@@ -50,4 +50,4 @@ const Item: React.FC<IItemProps> = ({ itemData }) => {
     )
 }
 
-export default Item
+export default ItemRow
