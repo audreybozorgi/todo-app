@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-Sortable Todo List App
+# Sortable Todo List App
 
 ## Available Scripts
 
