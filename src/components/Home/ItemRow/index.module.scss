@@ -10,9 +10,18 @@
     border-radius: 8px;
     margin-top: 8px;
 
+    .content_wrapper{
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .item_name{
         color: #020202;
         font-weight: 600;
         font-size: 14px;
+        padding: 8px;
     }
 }

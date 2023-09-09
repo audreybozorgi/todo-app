@@ -12,6 +12,8 @@ const AddNewItem: React.FC = () => {
 
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault()
+        if(!inputText) return 
+        
         const tempItem = {
             id: UUIDv4(),
             content: inputText
