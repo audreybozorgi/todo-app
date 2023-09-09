@@ -17,11 +17,11 @@ const JSONView: React.FC = () => {
                 ? renderEmptyState()
                 : <div className={styles.json_format_wrapper}>
                     <div className={styles.main_brace}>{'['}</div>
-                    {todoItems.map(item =>
+                    {todoItems.map((item, index) =>
                         <div key={item.id}>
                             <div className={styles.curly_brace}>{'{'}</div>
                             <div className={styles.body}>
-                                <span>id: "{item.id}",</span>
+                                <span>id: {index + 1},</span>
                                 <span>content: "{item.content}",</span>
                             </div>
                             <div></div>

@@ -39,6 +39,7 @@ const AddNewItem: React.FC = () => {
                         <Button
                             style={{ margin: '0 4px' }}
                             onClick={handleSubmit}
+                            disabled={!inputText}
                         >
                             Submit
                         </Button>
