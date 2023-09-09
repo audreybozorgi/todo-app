@@ -21,8 +21,8 @@ const JSONView: React.FC = () => {
                         <div key={item.id}>
                             <div className={styles.curly_brace}>{'{'}</div>
                             <div className={styles.body}>
-                                <span>id: {item.id}</span>
-                                <span>content: {item.content}</span>
+                                <span>id: "{item.id}",</span>
+                                <span>content: "{item.content}",</span>
                             </div>
                             <div></div>
                             <div className={styles.curly_brace}>{'},'}</div>

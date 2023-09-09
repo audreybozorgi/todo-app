@@ -1,39 +1,34 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ITodoItem } from "src/types/todoItem";
 
-type todoItem = {
-    id: string;
-    content: string;
-}
+const initialState: ITodoItem[] = [];
 
-const initialState: todoItem[] = [];
-
-const checkItemExist = (state: todoItem[], payload: todoItem | { id: string }) => {
+const checkItemExist = (state: ITodoItem[], payload: ITodoItem | { id: string }) => {
     return state.find(item => item.id === payload.id)
 }
 
 export const todoSlice = createSlice({
-    name: "todoItem",
+    name: "ITodoItem",
     initialState,
     reducers: {
-        handleAddNewItem: (state: todoItem[], action: PayloadAction<todoItem>) => {
-            if(!checkItemExist(state, action.payload)){
+        handleAddNewItem: (state: ITodoItem[], action: PayloadAction<ITodoItem>) => {
+            if (!checkItemExist(state, action.payload))
                 return state = [action.payload, ...state]
-            }
         },
-        handleReorderItems: (state: todoItem[], action: PayloadAction<todoItem[]>) => {
+        handleReorderItems: (state: ITodoItem[], action: PayloadAction<ITodoItem[]>) => {
             return state = action.payload
         },
-        handleRemoveItem:  (state: todoItem[], action: PayloadAction<{ id: string }>) => {
-            if(checkItemExist(state, action.payload)) {
+        handleRemoveItem: (state: ITodoItem[], action: PayloadAction<{ id: string }>) => {
+            if (checkItemExist(state, action.payload))
                 return state.filter(item => item.id !== action.payload.id)
-            }
         },
-        handleUpdateItem: (state: todoItem[], action: PayloadAction<todoItem>) => {
+        handleUpdateItem: (state: ITodoItem[], action: PayloadAction<ITodoItem>) => {
             let tempState = JSON.parse(JSON.stringify(state))
-            return tempState.map((item: todoItem) => {
-                if(item.id === action.payload.id) {
+
+            return tempState.map((item: ITodoItem) => {
+                if (item.id === action.payload.id)
                     item.content = action.payload.content
-                }
+
                 return item
             })
         },

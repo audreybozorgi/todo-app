@@ -5,19 +5,18 @@ import ItemRow from '../ItemRow'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useDragAndDrop } from 'src/hooks/useDragAndDrop';
 import { handleReorderItems } from 'src/redux/features/home/todoSlice'
-
+import { ITodoItem } from 'src/types/todoItem';
 
 const Items: React.FC = () => {
     const dispatch = useAppDispatch()
+    const todoItems = useAppSelector(state => state.todoSlice)
     const [
         getListStyle,
         getItemStyle,
         onDragEnd
     ] = useDragAndDrop()
 
-    const todoItems = useAppSelector(state => state.todoSlice)
-
-    const setStateItems = (items: any) => {
+    const setStateItems = (items: ITodoItem[]) => {
         dispatch(handleReorderItems(items))
     }
 
@@ -39,7 +38,7 @@ const Items: React.FC = () => {
                                 ref={provided.innerRef}
                                 style={getListStyle()}
                             >
-                                {todoItems.map((itemObject: any, index: number) => (
+                                {todoItems.map((itemObject: ITodoItem, index: number) => (
                                     <Draggable
                                         key={itemObject.id}
                                         draggableId={itemObject.id}
