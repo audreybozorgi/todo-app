@@ -13,9 +13,9 @@
     .content_wrapper{
         display: flex;
         align-items: center;
-        height: 100%;
         flex: 1;
         padding: 5px 0px;
+        flex-wrap: wrap;
 
         .item_name{
             color: #fff;

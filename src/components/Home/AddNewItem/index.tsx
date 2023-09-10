@@ -29,22 +29,22 @@ const AddNewItem: React.FC = () => {
     return (
         <div className={styles.container}>
             <h4 className={styles.title}>Add New</h4>
-                <form>
-                    <div className={styles.form_elements_wrapper}>
-                        <Input
-                            style={{ flex: 1, height: '25px' }}
-                            onChange={handleChangeText}
-                            value={inputText}
-                        />
-                        <Button
-                            style={{ margin: '0 4px' }}
-                            onClick={handleSubmit}
-                            disabled={!inputText}
-                        >
-                            Submit
-                        </Button>
-                    </div>
-                </form>
+            <form>
+                <div className={styles.form_elements_wrapper}>
+                    <Input
+                        style={{ flex: 1, height: '25px' }}
+                        onChange={handleChangeText}
+                        value={inputText}
+                    />
+                    <Button
+                        style={{ margin: '0 4px' }}
+                        onClick={handleSubmit}
+                        disabled={!inputText}
+                    >
+                        Submit
+                    </Button>
+                </div>
+            </form>
         </div>
     )
 }
