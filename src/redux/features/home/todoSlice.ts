@@ -32,7 +32,7 @@ export const todoSlice = createSlice({
                 return item
             })
         },
-        reset: () => initialState,
+        handleResetList: (state: ITodoItem[]) => state = initialState
     },
 });
 
@@ -41,6 +41,6 @@ export const {
     handleReorderItems,
     handleRemoveItem,
     handleUpdateItem,
-    reset,
+    handleResetList,
 } = todoSlice.actions;
 export default todoSlice.reducer;

@@ -4,8 +4,10 @@ import { useAppDispatch, useAppSelector } from 'src/redux/hooks'
 import ItemRow from '../ItemRow'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useDragAndDrop } from 'src/hooks/useDragAndDrop';
-import { handleReorderItems } from 'src/redux/features/home/todoSlice'
+import { handleReorderItems, handleResetList } from 'src/redux/features/home/todoSlice'
 import { ITodoItem } from 'src/types/todoItem';
+import Button from 'src/components/Kit/Button';
+import { BUTTON_CLASS_OPTIONS } from 'src/enums/button';
 
 const Items: React.FC = () => {
     const dispatch = useAppDispatch()
@@ -62,6 +64,13 @@ const Items: React.FC = () => {
                         )}
                     </Droppable>
                 </DragDropContext>
+            }
+            {todoItems.length > 0 &&
+                <div className={styles.reset_button_wrapper}>
+                    <Button type={BUTTON_CLASS_OPTIONS.DANGER} onClick={() => dispatch(handleResetList())}>
+                        <span className=''>Reset List</span>
+                    </Button>
+                </div>
             }
         </div>
     )
