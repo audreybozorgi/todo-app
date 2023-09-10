@@ -21,6 +21,7 @@
 
 .reset_button_wrapper{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 8px;
     margin-top: 14px;
 }
